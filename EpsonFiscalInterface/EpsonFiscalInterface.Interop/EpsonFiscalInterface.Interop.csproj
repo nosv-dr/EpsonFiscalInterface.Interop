@@ -46,9 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AFIP_CODIGO_FORMA_DE_PAGO.cs" />
+    <Compile Include="AFIP_CODIGO_OTROS_TRIBUTOS.cs" />
+    <Compile Include="AFIP_CODIGO_UNIDAD_MEDIDA.cs" />
+    <Compile Include="AFIP_TIPO_COMPROBANTE.cs" />
     <Compile Include="EpsonFiscalInterface.cs" />
     <Compile Include="EpsonFiscalInterfaceException.cs" />
     <Compile Include="EpsonFiscalInterfaceImport.cs" />
+    <Compile Include="ESTADO.cs" />
+    <Compile Include="ID_CODIGO.cs" />
+    <Compile Include="ID_IMPUESTO.cs" />
+    <Compile Include="ID_MODIFICADOR.cs" />
+    <Compile Include="ID_RESPONSABILIDAD_IVA.cs" />
+    <Compile Include="ID_TASA_IVA.cs" />
+    <Compile Include="ID_TIPO_COMPROBANTE.cs" />
+    <Compile Include="ID_TIPO_DOCUMENTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

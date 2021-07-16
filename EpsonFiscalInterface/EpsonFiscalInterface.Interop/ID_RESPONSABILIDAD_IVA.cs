@@ -1,0 +1,17 @@
+﻿namespace EpsonFiscalInterface.Interop
+{
+    public enum ID_RESPONSABILIDAD_IVA
+    {
+        NINGUNO = 0,
+        RESPONSABLE_INSCRIPTO = 1,
+        NO_RESPONSABLE = 3,
+        MONOTRIBUTISTA = 4,
+        CONSUMIDOR_FINAL = 5,
+        EXENTO = 6,
+        NO_CATEGORIZADO = 7,
+        MONOTRIBUTISTA_SOCIAL = 8,
+        CONTRIBUYENTE_EVENTUAL = 9,
+        CONTRIBUYENTE_EVENTUAL_SOCIAL = 10,
+        MONOTRIBUTO_INDEPENDIENTE_PROMOVIDO = 11,
+    }
+}

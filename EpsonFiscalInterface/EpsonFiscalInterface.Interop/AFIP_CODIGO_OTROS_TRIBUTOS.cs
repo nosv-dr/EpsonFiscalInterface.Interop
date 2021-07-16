@@ -1,0 +1,16 @@
+﻿namespace EpsonFiscalInterface.Interop
+{
+    public enum AFIP_CODIGO_OTROS_TRIBUTOS
+    {
+        IMPUESTOS_NACIONALES = 1,
+        IMPUESTOS_PROVINCIAL = 2,
+        IMPUESTO_MUNICIPAL = 3,
+        IMPUESTO_INTERNOS = 4,
+        INGRESOS_BRUTOS = 5,
+        PERCEPCION_DE_IVA = 6,
+        PERCEPCION_DE_INGRESOS_BRUTOS = 7,
+        PERCEPCION_POR_IMPUESTOS_MUNICIPALES = 8,
+        OTRAS_PERCEPCIONES = 9,
+        OTROS = 99,
+    }
+}
