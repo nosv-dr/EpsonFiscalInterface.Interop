@@ -433,10 +433,354 @@ namespace EpsonFiscalInterface.Interop
             return EpsonFiscalInterfaceImport.ImprimirSubtotal();
         }
 
-        [Obsolete]
+        
         public static void AbrirDocumento(AFIP_TIPO_COMPROBANTE id_tipo_documento)
         {
             AbrirComprobante(AFIPTOID(id_tipo_documento));
+        }
+
+        public static string ObtenerEstadoDeterminado(ESTADO id, int response)
+        {
+            // mostrar respuesta
+            switch (id)
+            {
+                case ESTADO.DOC_EN_PROGRESO:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin documentos en progreso";
+
+                            case 1:
+                                return "Tique/Tique-Nota de Crédito";
+
+                            case 2:
+                                return "Tique-Factura A/B/C/M";
+
+                            case 3:
+                                return "Tique-Nota de Crédito A/B/C/M";
+
+                            case 4:
+                                return "Tique-Nota de Débito A/B/C/M";
+
+                            case 6:
+                                return "Documento de Auditoría";
+
+                            case 8:
+                                return "DNFH Genérico/Uso Interno (rollo)";
+
+                            case 10:
+                                return "DNFH";
+                        }
+                        break;
+                    }
+
+                case ESTADO.SUBESTADOS:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin subestados";
+
+                            case 1:
+                                return "Solicitud o carga de certificado digital";
+
+                            case 2:
+                                return "Configuración de Scanner";
+
+                            case 3:
+                                return "Configuración de Logo";
+
+                            case 4:
+                                return "Auditoría en progreso";
+
+                            case 5:
+                                return "Descarga de reporte en progreso";
+
+                            case 6:
+                                return "Reimpresión en progreso";
+
+                            case 7:
+                                return "Descarga de reporte de eventos en progreso";
+                        }
+                        break;
+                    }
+
+                case ESTADO.JORNADA_FISCAL:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Jornada fiscal cerrada.";
+
+                            case 1:
+                                return "Jornada fiscal abierta.";
+                        }
+                        break;
+                    }
+
+                case ESTADO.MEM_TRANSACCIONES:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Memoria de transacciones en perfecto estado";
+
+                            case 1:
+                                return "Memoria de transacciones cerca de su llenado";
+
+                            case 2:
+                                return "Memoria de transacciones llena";
+
+                            case 3:
+                                return "Memoria de transacciones con desperfectos";
+                        }
+                        break;
+                    }
+
+                case ESTADO.MEM_FISCAL:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Memoria fiscal en perfecto estado";
+
+                            case 1:
+                                return "Memoria fiscal cerca de su llenado";
+
+                            case 2:
+                                return "Memoria fiscal llena";
+
+                            case 3:
+                                return "Memoria fiscal con desperfectos";
+                        }
+                        break;
+                    }
+
+                case ESTADO.MODO_TECNICO:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Modo técnico inactivo";
+
+                            case 1:
+                                return "Modo técnico activo";
+                        }
+                        break;
+                    }
+
+                case ESTADO.CERTIFICADOS_DIGITALES:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Certificados digitales válidos";
+
+                            case 1:
+                                return "certificados digitales vencido(s), cercano(s) de su expiración, inválido(s)";
+                        }
+                        break;
+                    }
+
+                case ESTADO.MODO_FUNCIONAMIENTO_EQUIPO:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Modo bloqueado por software";
+
+                            case 1:
+                                return "Modo manufactura";
+
+                            case 2:
+                                return "Modo entrenamiento";
+
+                            case 3:
+                                return "Modo fiscal";
+
+                            case 15:
+                                return "Bloqueo por hardware";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_RECIBOS:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin problemas";
+
+                            case 1:
+                                return "Poco papel disponible";
+
+                            case 2:
+                                return "Papel no disponible";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_JOURNAL:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin problemas";
+
+                            case 1:
+                                return "Poco papel disponible";
+
+                            case 2:
+                                return "Papel no disponible";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_SLIP_SENSOR_VALIDACION:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin papel";
+
+                            case 1:
+                                return "Con papel";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_SLIP_SENSOR_TOF:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin papel";
+
+                            case 1:
+                                return "Con papel";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_SLIP_SENSOR_BOF:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin papel";
+
+                            case 1:
+                                return "Con papel";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_SLIP_VALIDACION_SENSOR_ESPERA:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Estado normal (sin espera)";
+
+                            case 1:
+                                return "A la espera de carga de papel";
+
+                            case 2:
+                                return "A la espera de remoción de papel";
+                        }
+                        break;
+                    }
+
+                case ESTADO.ESTACION_SELECCIONADA:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Receipt (recibos)";
+
+                            case 1:
+                                return "Slip (hojas sueltas)";
+
+                            case 2:
+                                return "Validación";
+
+                            case 3:
+                                return "MICR";
+                        }
+                        break;
+                    }
+
+                case ESTADO.CAJON_DINERO:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Cajón de dinero cerrado";
+
+                            case 1:
+                                return "Cajón de dinero abierto";
+                        }
+                        break;
+                    }
+
+                case ESTADO.TAPA:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Tapa de impresora cerrada";
+
+                            case 1:
+                                return "Tapa de impresora abierta";
+                        }
+                        break;
+                    }
+
+                case ESTADO.IMPRESORA_CON_ERROR:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Impresora sin error";
+
+                            case 1:
+                                return "Impresora con error";
+                        }
+                        break;
+                    }
+
+                case ESTADO.IMPRESORA_EN_LINEA:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Impresora en línea (online)";
+
+                            case 1:
+                                return "Impresora fuera de línea (offline)";
+                        }
+                        break;
+                    }
+
+                case ESTADO.CONEXION:
+                    {
+                        switch (response)
+                        {
+                            case 0:
+                                return "Sin Conexión";
+
+                            case 1:
+                                return "Equipo ocupado";
+
+                            case 2:
+                                return "Equipo disponible para comunicarse. (IDLE)";
+                        }
+                        break;
+                    }
+            }
+
+            return string.Empty;
         }
 
         /* Private */

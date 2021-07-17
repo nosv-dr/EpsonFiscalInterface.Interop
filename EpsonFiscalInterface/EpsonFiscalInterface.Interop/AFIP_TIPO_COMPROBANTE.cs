@@ -1,5 +1,8 @@
 ﻿namespace EpsonFiscalInterface.Interop
 {
+    /// <summary>
+    /// Tipos de comprobantes.
+    /// </summary>
     public enum AFIP_TIPO_COMPROBANTE
     {
         /// <summary>
@@ -98,12 +101,12 @@
         DNFH_COMPROBANTE_DONACION = 907,
 
         /// <summary>
-        /// DNFH Documento Generico 
+        /// Documento no fiscal homologado genérico.
         /// </summary>
         DNFH_DOCUMENTO_GENERICO = 910,
 
         /// <summary>
-        /// DNFH Documento de uso interno  
+        /// Documento no fiscal homologado de uso interno.
         /// </summary>
         DNFH_DOCUMENTO_DE_USO_INTERNO = 950,
     }
