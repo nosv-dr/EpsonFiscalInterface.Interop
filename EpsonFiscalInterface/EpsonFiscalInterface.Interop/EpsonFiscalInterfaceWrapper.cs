@@ -3,7 +3,7 @@ using System.Text;
 
 namespace EpsonFiscalInterface.Interop
 {
-    public class EpsonFiscalInterface
+    public class EpsonFiscalInterfaceWrapper
     {
         private const int BufferSize = 1024;
 
